@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="index.css" type="text/css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app1">
+
+    </div>
+    <div id="app2">
+        <p @click="showBox">点击打开MessageBox</p>
+    </div>
+
+    <div class="messagebox"></div>
+
+    <div class="submitbox"></div>
+
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+
+    <script>
+        //消息提示
+        let config = {
+            data() {
+                return {
+                    title: "标题名称",
+                    content: "这是一段内容",
+                    flag: false
+                }
+            },
+            template: '<div><div v-show="flag" id="messagebox"><h4>{{title}}</h4><p>{{content}}</p><b @click="close">×</b><button @click="close">确定</button></div></div>',
+            methods: {
+                close() {
+                    this.flag = false;
+                }
+            }
+        }
+
+        let MessageBoxConstructor = Vue.extend(config);
+        let MessageBox = new MessageBoxConstructor();
+        MessageBox.$mount(".messagebox");
+        // console.log(MessageBox)
+
+        //提交内容
+        let config2 = {
+            data() {
+                return {
+                    title: "提示",
+                    content: "请输入用户名",
+                    username: '',
+                    flag: false
+                }
+            },
+            template: '<div><p @click="open">点击打开submitbox</p><div  v-show="flag" id="messagebox"><h4>{{title}}</h4><p>{{content}}</p><input v-model="username" type="text"/><b @click="cancel">×</b><button @click="cancel" class="cancel">取消</button><button @click="sure">确定</button></div></div>',
+            methods: {
+                open() {
+                    this.flag = true;
+                    this.username = "";
+                },
+                sure() {
+                    if (this.username) {
+                        console.log("确定", this.username)
+                        this.flag = false;
+                    }
+                },
+                cancel() {
+                    this.flag = false;
+                    console.log("取消")
+                }
+            }
+        }
+
+        var SubmitBoxConstructor = Vue.extend(config2);
+        let SubmitBox = new SubmitBoxConstructor();
+        SubmitBox.$mount(".submitbox")
+
+
+        var App1 = new Vue({
+            el: '#app1',
+            methods: {
+                showBox() {
+                    MessageBox.flag = true;
+                }
+            }
+        })
+
+        var App2 = new Vue({
+            el: '#app2',
+            methods: {
+                showBox() {
+                    MessageBox.flag = true;
+                }
+            }
+        })
+        // App2.$mount('#app2');
+
+    </script>
+</body>
+
+</html>

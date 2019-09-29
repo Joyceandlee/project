@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    outline: none;
+}
+
+html, body, #app {
+    width: 100%;
+    height: 100%;
+}
+
+html {
+    font-size: calc(100/750*100vw);
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.5rem;
+}
+
+#app header {
+    width: 100%;
+    height: 1rem;
+    line-height: 1rem;
+    background: #eee;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#app main {
+    flex: 1;
+    overflow: auto;
+}
+
+#app header span {
+    font-size: 0.4rem;
+}
+
+#app header span:nth-child(1) {
+    margin-left: 0.2rem;
+}
+
+#app header span:nth-child(3) {
+    margin-right: 0.2rem;
+}
+
+.banner {
+    width: 100%;
+}
+
+.ipt {
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.ipt h5 {
+    color: orangered;
+}
+
+.ipt .txt {
+    width: 6.5rem;
+    height: 0.8rem;
+    border-radius: 0.4rem;
+    padding: 0.2rem;
+    border: 1px solid #ccc;
+}
+
+.ipt .sp {
+    display: flex;
+    align-items: center;
+}
+
+.ipt .sp span {
+    font-size: 0.25rem;
+}
+
+.radio {
+    margin-right: 0.1rem;
+}
+
+.oranged {
+    color: orangered;
+}
+
+.ipt button {
+    width: 6.5rem;
+    height: 0.8rem;
+    border-radius: 0.4rem;
+    padding: 0.2rem;
+    border: 0;
+    background: orangered;
+    color: #fff;
+}
+
+.container-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* height: 11rem; */
+}
+
+.container-main h4 {
+    padding: 0.4rem 0.2rem;
+}
+
+.list {
+    display: flex;
+    flex-direction: row;
+    height: 3rem;
+}
+
+.list img {
+    height: 50%;
+    margin-top: .6rem;
+}
+.right{
+    margin-right: 0.2rem;
+    display: flex;
+    flex-direction: column;
+   /* justify-content: space-around; */
+   align-items: flex-start;
+}
+
+.right p {
+    margin-top: 0.2rem;
+    color: #ccc;
+    font-size: 0.3rem;
+}
+.right b{
+    margin-top: 0.2rem;
+}
+.right h6{
+    margin-top: 0.2rem;
+}
+.left{
+    margin-left: 0.2rem;
+    display: flex;
+    flex-direction: column;
+   justify-content: space-around;
+   align-items: flex-end;
+}
+.left p {
+    /* margin-top: 0.2rem; */
+    color: #ccc;
+    font-size: 0.3rem;
+  text-align: right;
+}
+.left b{
+    margin-top: 0.2rem;
+    text-align: right;
+}
+.left h6{
+    /* margin-top: 0.2rem; */
+    text-align: right;
+    /* float: right; */
+}
+.footer {
+    width: 100%;
+}
